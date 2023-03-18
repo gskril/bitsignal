@@ -1,6 +1,12 @@
 import './assets/styles/App.css'
+import { useFetch } from './hooks/useFetch'
+import { CoingeckoResponse } from './types'
 
 function App() {
+  const { data, error } = useFetch<CoingeckoResponse>(
+    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'
+  )
+
   return (
     <main>
       <div className="header">
@@ -13,7 +19,24 @@ function App() {
 
         <div className="progress-wrapper">
           <div className="progress-bar">
-            <div className="progress-bar-progress" />
+            {error || (data && !data?.bitcoin.usd) ? (
+              <span
+                style={{
+                  padding: '1rem',
+                }}
+              >
+                Error fetching Bitcoin price :/
+              </span>
+            ) : (
+              <div
+                className="progress-bar-progress"
+                style={{
+                  width: `${
+                    data ? (data.bitcoin.usd / 1_000_1000) * 1000 : 0
+                  }%`,
+                }}
+              />
+            )}
           </div>
           <div className="progress-labels">
             <span className="progress-label">$0</span>
