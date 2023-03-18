@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './assets/styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <main>
       <div className="header">
-        <h1>The BitSignal</h1>
-        <img src="/bitcoin@256.png" alt="Bitcoin Logo" />
+        <h1 className="desktop-only">The BitSignal</h1>
+        <img className="btc-logo" src="/bitcoin@256.png" alt="Bitcoin Logo" />
       </div>
 
-      <div className="progress-wrapper">
-        <div className="progress-bar">
-          <div className="progress-bar-progress" />
-        </div>
+      <div className="bottom-section">
+        <h1 className="tablet-down">The BitSignal</h1>
 
-        <span className="progress-label">$0</span>
-        <span className="progress-label">$1,000,000</span>
+        <div className="progress-wrapper">
+          <div className="progress-bar">
+            <div className="progress-bar-progress" />
+          </div>
+          <div className="progress-labels">
+            <span className="progress-label">$0</span>
+            <span className="progress-label">$1,000,000</span>
+          </div>
+        </div>
       </div>
     </main>
   )
