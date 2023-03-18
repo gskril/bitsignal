@@ -28,14 +28,26 @@ function App() {
                 Error fetching Bitcoin price :/
               </span>
             ) : (
-              <div
-                className="progress-bar-progress"
-                style={{
-                  width: `${
-                    data ? (data.bitcoin.usd / 1_000_1000) * 1000 : 0
-                  }%`,
-                }}
-              />
+              <>
+                <div
+                  className="progress-bar-progress"
+                  style={{
+                    width: `${
+                      data ? (data.bitcoin.usd / 1_000_1000) * 1000 : 0
+                    }%`,
+                  }}
+                />
+                {data && (
+                  <span className="price-label">
+                    {Intl.NumberFormat('en-US', {
+                      style: 'currency',
+                      currency: 'USD',
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    }).format(data.bitcoin.usd)}
+                  </span>
+                )}
+              </>
             )}
           </div>
           <div className="progress-labels">
