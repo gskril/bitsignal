@@ -14,11 +14,22 @@ main {
   gap: 2rem;
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0px 2px 100px 32px rgba(247, 147, 26, 0.25);
+  }
+  50% {
+    box-shadow: 0px 2px 100px 32px rgba(247, 147, 26, 0.325);
+  }
+}
+
 .btc-logo {
   width: 12rem;
   max-width: 13rem;
   border-radius: 12rem;
   box-shadow: 0px 2px 100px 32px rgba(247, 147, 26, 0.25);
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .desktop-only {
