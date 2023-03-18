@@ -1,8 +1,10 @@
 import './assets/styles/App.css'
-import { useFetch } from './hooks/useFetch'
 import { CoingeckoResponse } from './types'
+import { useCountdown } from './hooks/useCountdown'
+import { useFetch } from './hooks/useFetch'
 
 function App() {
+  const countdown = useCountdown()
   const { data, error } = useFetch<CoingeckoResponse>(
     'https://bitcoin-price-kappa.vercel.app/api/price'
   )
@@ -10,12 +12,18 @@ function App() {
   return (
     <main>
       <div className="header">
-        <h1 className="desktop-only">The BitSignal</h1>
+        <div>
+          <h1 className="desktop-only">The BitSignal</h1>
+          <span className="desktop-only countdown">{countdown}</span>
+        </div>
         <img className="btc-logo" src="/bitcoin@256.png" alt="Bitcoin Logo" />
       </div>
 
       <div className="bottom-section">
-        <h1 className="tablet-down">The BitSignal</h1>
+        <div>
+          <span className="tablet-down countdown">{countdown}</span>
+          <h1 className="tablet-down">The BitSignal</h1>
+        </div>
 
         <div className="progress-wrapper">
           <div className="progress-bar">
