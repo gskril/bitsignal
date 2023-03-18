@@ -4,7 +4,7 @@ import { CoingeckoResponse } from './types'
 
 function App() {
   const { data, error } = useFetch<CoingeckoResponse>(
-    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'
+    'https://bitcoin-price-kappa.vercel.app/api/price'
   )
 
   return (
