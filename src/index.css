@@ -1,5 +1,54 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi-Medium.otf') format('opentype'),
+    url('/assets/fonts/Satoshi-Medium.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi-Bold.otf') format('opentype'),
+    url('/assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi-Variable.ttf') format('truetype'),
+    url('/assets/fonts/Satoshi-Variable.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-Variable.woff') format('woff');
+  font-weight: 800;
+  font-variation-settings: 'wght' 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi-Black.otf') format('opentype'),
+    url('/assets/fonts/Satoshi-Black.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Satoshi, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
