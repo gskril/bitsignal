@@ -19,13 +19,13 @@ function App() {
 
         <div className="progress-wrapper">
           <div className="progress-bar">
-            {error || (data && !data?.bitcoin.usd) ? (
+            {error || (data && !data.bitcoin) ? (
               <span
                 style={{
                   padding: '1rem',
                 }}
               >
-                Error fetching Bitcoin price :/
+                Error fetching price
               </span>
             ) : (
               <>
